@@ -13,7 +13,7 @@
 #     Triângulo Isósceles: os comprimentos de dois lados são iguais.
 #     Triângulo Escaleno: os comprimentos dos três lados são diferentes.
 
-def verify_triangle(x, y, z):
+def verify_triangle(tup):
     """
     Verify the length of the sides of 3 sides and
     return if it can be a triangle and the triangle's type.
@@ -24,6 +24,7 @@ def verify_triangle(x, y, z):
     :return type_triangle:
     """
     type_triangle = ""
+    x, y, z = tup[0], tup[1], tup[2]
 
     if x < y + z and y < x + z and z < x + y:
         if x == y and y == z:
@@ -32,12 +33,14 @@ def verify_triangle(x, y, z):
             type_triangle = "Isósceles"
         elif x != y and x != z and y != z:
             type_triangle = "Escaleno"
+        return type_triangle, True
     else:
         type_triangle = "Não se encaixa nas regras para ser um triângulo!"
+        return type_triangle, False
 
-    return type_triangle
-
+#MAIN
 x = int(input("Please insert the X side lenght: "))
 y = int(input("Please insert the Y side lenght: "))
 z = int(input("Please insert the Z side lenght: "))
-print(verify_triangle(x, y, z))
+tup = (x, y, z)
+print(verify_triangle(tup)[0])
