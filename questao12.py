@@ -12,7 +12,7 @@ def draw_circle(n):
     """
     t_draw = turtle.Turtle()
     t_draw.circle(n)
-    turtle.done()
 #MAIN
 n = float(input("Insert the lenght of the circle`s radius: "))
 draw_circle(n)
+turtle.done()

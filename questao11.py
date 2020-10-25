@@ -13,8 +13,7 @@ def draw_triangle(n):
     for index in range(3):
         t_draw.forward(n)
         t_draw.right(120)
-
-    turtle.done()
 #MAIN
 n = float(input("Insert the lenght of the triangle`s side: "))
 draw_triangle(n)
+turtle.done()

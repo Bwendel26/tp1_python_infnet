@@ -14,7 +14,7 @@ def draw_square(n):
         t_draw.forward(n)
         t_draw.right(90)
 
-    turtle.done()
 #MAIN
 n = float(input("Insert the lenght of the square`s side: "))
 draw_square(n)
+turtle.done()
