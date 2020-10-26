@@ -1,3 +1,6 @@
+#16.Altere o código da questão 15 para adicionar em
+# outra região um novo polígono à sua escolha.
+
 import turtle
 
 def geraPontos(i):
@@ -10,8 +13,8 @@ def geraPontos(i):
     return lista
 
 def desenhaPoligono(inicio, pontos, corLinha="black", corRecheio="white"):
-    turtle.pencolor(lineColour)
-    turtle.fillcolor(fillColour)
+    turtle.pencolor(corLinha)
+    turtle.fillcolor(corRecheio)
 
     turtle.penup()
 
@@ -20,7 +23,7 @@ def desenhaPoligono(inicio, pontos, corLinha="black", corRecheio="white"):
     turtle.pendown()
     turtle.begin_fill()
 
-    x, y = start
+    x, y = inicio
 
     for ponto in pontos:
         dx, dy = ponto
@@ -38,11 +41,15 @@ def teste():
 
     # Segundo quadrado
     quadrado_maior = geraPontos(100)
-    desenhaPoligono((-200, 200), quadrado_maior, cor="green")
+    desenhaPoligono((-200, 200), quadrado_maior, corRecheio="green")
 
     # Triangulo
     triangulo = [(200, 0), (100, 100), (0, 0)]
-    desenhaPoligono((100, -100), triangulo, cor="green")
+    desenhaPoligono((100, -100), triangulo, corRecheio="green")
+
+    # Pentágono
+    pentagono = geraPontos(300)
+    desenhaPoligono((-100, -300), quadrado_maior, corRecheio="red")
 
 
 def main():
@@ -50,7 +57,3 @@ def main():
     turtle.done()
 
 main()
-
-'''
-    
-'''
